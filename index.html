@@ -1,13 +1,123 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Exercise Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #007acc;
+        }
+        .code {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TypeScript Exercise - Tutti i Concetti Implementati</h1>
+        
+        <div class="section">
+            <h2>1 Tipi Primitivi</h2>
+            <p>I tipi primitivi principali in TypeScript sono: <strong>string, number, boolean, null, undefined, symbol, bigint</strong></p>
+        </div>
+
+        <div class="section">
+            <h2>2 Variabili Tipizzate</h2>
+            <div class="code">
+                const mioNome: string = "Mario";<br>
+                const miaEta: number = 25;<br>
+                const stoStudiandoTypeScript: boolean = true;
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3-6 Funzioni Tipizzate</h2>
+            <div class="code">
+                const greet = (name: string): string => "Ciao " + name;<br>
+                const sum = (a: number, b: number): number => a + b;<br>
+                const calcolaPrezzoConIVA = (prezzo: number): number => prezzo * 1.22;<br>
+                const concatenaStringhe = (str1: string, str2: string): number => (str1 + str2).length;
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>7-8 Type Union</h2>
+            <div class="code">
+                type StringOrNumber = string | number;<br>
+                let valore: number | null | undefined;
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>9 Stringhe Letterali</h2>
+            <div class="code">
+                type GiorniSettimana = "Lunedì" | "Martedì" | "Mercoledì" | "Giovedì" | "Venerdì" | "Sabato" | "Domenica";
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>10-11 Array e Tuple</h2>
+            <div class="code">
+                const numbers: number[] = [1, 2, 3];<br>
+                type TuplaMista = [string, string, string, number, number];
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>12-14 Interfacce</h2>
+            <div class="code">
+                interface Persona { firstname: string; lastname: string; age: number; }<br>
+                interface Utente { email: string; telefono?: string; }
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>15-17 Oggetti e Estensioni</h2>
+            <div class="code">
+                interface Veicolo { marca: string; modello: string; anno: number; }<br>
+                interface Auto extends Veicolo { numeroPorte: number; tipoAlimentazione: string; }
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>18-20 Generics</h2>
+            <div class="code">
+                interface ApiResponse<T> {<br>
+                &nbsp;&nbsp;success: boolean;<br>
+                &nbsp;&nbsp;data: T;<br>
+                &nbsp;&nbsp;message?: string;<br>
+                &nbsp;&nbsp;timestamp: Date;<br>
+                }
+            </div>
+        </div>
+
+        <p><strong>Apri la console del browser per vedere i risultati dei test!</strong></p>
+    </div>
+
+    <script type="module" src="./src/dist/typescript-exercise.js"></script>
+</body>
 </html>
